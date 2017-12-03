@@ -1,0 +1,24 @@
+1.entityManager的托管方式有两种，
+	①.应用程序托管
+  需要我们手动的开启事务，没有开启事务则抛出异常
+	
+	②.容器托管
+		容器托管的EntityManager对象最简单，程序员不需要考虑EntityManager连接的释放，以及事务等复杂的问题，所有这些都交 给容器去管理。  EntityManager对象都是通过注入 @PersistenceContext注释来获得的，其实，这种获得EntityManager对象的方式就是容器托管的。
+	
+	
+  注意：	容器托管不用也不能手动开启事务，如果手动开启则抛出
+	  java.lang.IllegalStateException:Not allowed to create transaction on shared   EntityManager - use Spring transactions or EJB CMT instead
+2.jpql是不支持新增的
+3.@Test和@Transactional一起使用不会报错，但是数据无法更新，即测试用例一般用来调方法，如果测试用例上写事务方法测试成功也会有问题。
+4.remove必须处理非游离对象，如果是游离对象，则如果此对象的id和数据库表中的一样则报错，不一样不会报错但是不会持久化
+5.persist处理游离对象，如果游离对象的主键和数据库中的重复，则会报错
+  org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [PRIMARY]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+  如果是游离对象，但是主键id和数据库中的不重复，则会持久化到数据库中。
+6.spring-data jpa 在进行 自定义DML操作时，要加@@Modifying注解，否则报错。
+
+ 
+ 
+
+
+		
+。
