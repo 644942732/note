@@ -5,10 +5,9 @@
   2.springboot下使用 spring security
     ①.创建一个类  WebSecurityConfig继承WebSecurityConfigurerAdapter,并且加上@EnbleWebSercurity注解  
     
-
-     ```java @EnableWebSecurity
-    ``` java public class WebSecurityConfig extends WebSecurityConfigurerAdapter {}   
-
+ ```java @EnableWebSecurity
+     public class WebSecurityConfig extends WebSecurityConfigurerAdapter {}   
+```
   
   
   
