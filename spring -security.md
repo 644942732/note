@@ -26,7 +26,7 @@
           
      }   
 
-      ③.此时，需要指定一个验证方式，首先创建一个方法configGlobal  ，并且注入一个验证管理器建造器 ，
+      ③.需要指定一个验证方式，首先创建一个方法configGlobal  ，并且注入一个验证管理器建造器 ，以内存验证为例，指定两个用户、密码和角色
 
       @EnableWebSecurity
      public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -37,6 +37,9 @@
 
 	      }
      }   
+     ④.验证成功后会默认访问'/'
+     ⑤。使用自定义的登录页面和成功后的跳转页面，需要重写WebSecurityConfigurerAdapter类的configure方法
+     待续。。。。
  ```
   
   
