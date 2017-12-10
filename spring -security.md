@@ -26,8 +26,8 @@
           
      }   
 
-      ③.需要指定一个验证方式，首先创建一个方法configGlobal  ，并且注入一个验证管理器建造器 ，以内存验证为例，指定两个用户、密码和角色
-
+      ③.需要指定一个验证方式，首先创建一个方法configGlobal  ，并且注入一个验证管理器建造器 ，以内存认证模式为例，指定两个用户、密码和角色
+进行验证
       @EnableWebSecurity
      public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
       @Autowired
